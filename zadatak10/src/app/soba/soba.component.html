@@ -1,0 +1,43 @@
+
+<div class="col-lg-12">
+  <div class="row">
+    <form class="navbar-form navbar-left" role="search">
+      <div class="form-group">
+        Filter po broju kreveta :
+        <input type="text" class="form-control" placeholder="Search" name="brojKreveta"
+        [(ngModel)]="brojKreveta">
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="col-lg-12">
+  <div class="row">
+    <form class="navbar-form navbar-left" role="search">
+      <div class="form-group">
+        Filter po broju kvadrata :
+        <input type="text" class="form-control" placeholder="Search" name="kvadrata"
+        [(ngModel)]="kvadrata">
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="col-lg-12">
+  Sobe<br/> <br/>
+</div>
+
+<div *ngFor="let soba of data | SearchsobaPipe:brojKreveta | SearchsobakvadratPipe:kvadrata">
+
+  Broj : {{soba.broj}}
+  <br/>
+  Vrsta sobe : {{soba.vrsta}}
+  <br/>
+
+  Broj kreveta : {{soba.brojKreveta}}
+  <br/>
+
+    m2: {{soba.kvadrata}}
+    <br/> <br/>
+
+</div>
